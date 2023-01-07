@@ -115,7 +115,7 @@ const Calendar = ({ value, onChange }) => {
           {/* Mapping of actual days in month */}
 
           {Array.from({ length: newDay }).map((day, i) => {
-            console.log(day);
+            //console.log(day);
             const date = i + 1;
             const isCurrentDate = date === value.getDate();
 

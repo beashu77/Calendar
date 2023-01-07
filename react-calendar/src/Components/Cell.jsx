@@ -4,7 +4,6 @@ import { useState } from "react";
 
 const Cell = ({ children, onClick, isActive }) => {
 
-  const [curr,setCurr] = useState(new Date)
   return isActive ? (
     <Box
     border={"1px solid rgba(0,0,0,0.05)"}
