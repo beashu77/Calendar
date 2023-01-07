@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, Button, Center } from "@chakra-ui/react";
+import { format } from "date-fns";
+import { useState } from "react";
+import "./App.css";
+import Calendar from "./Components/Calendar";
 
 function App() {
+  const [currentDate, setCurrentDate] = useState(new Date('01-01-2019'));
+
+  const handleToday=()=>{
+    setCurrentDate(new Date)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="text-3xl">
+      <Center>Selected Date :{format(currentDate,'dd LLLL yyyy')}
+      <Button onClick={handleToday} bg={'#5187ef'} color={'white'} >Today</Button></Center>
+      <Calendar value={currentDate} onChange={setCurrentDate} />
     </div>
   );
 }
